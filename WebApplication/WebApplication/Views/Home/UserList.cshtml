@@ -1,0 +1,24 @@
+﻿@model WebApplication.Models.UserListViewModel
+@{
+    ViewData["Title"] = "UserList";
+}
+
+<h2>UserList</h2>
+
+<body>
+    There are @Model.NumberOfUsers users registered.
+
+    <ul>
+        @foreach (WebApplication.Models.User user in Model.Users)
+        {
+            <li>@user.Key @user.UserName</li>
+        }
+
+    </ul>
+    <a asp-action="Index"> Go Home </a>
+    <a asp-action="Register"> Register New User</a>
+    <a asp-action="Login">Loginr</a>
+
+
+</body>
+

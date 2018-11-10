@@ -1,0 +1,11 @@
+﻿@model WebApplication.Models.User
+@{
+    ViewData["Title"] = "Login";
+}
+<h2>Login</h2>
+<div asp-validation-summary="All"></div>
+<form action="/Home/Login" method="post">
+    <input type="text" name="UserName" value="" />
+    <input type="text" name="Password" value="" />
+    <button type="submit" name="Submit">Submit</button>
+</form>
