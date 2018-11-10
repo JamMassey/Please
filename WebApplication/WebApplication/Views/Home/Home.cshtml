@@ -5,13 +5,13 @@
 }
 <h2>Home</h2>
 
-<form action="/Home/Post" method="post">
+<form action="/Home/Home" method="post">
     <input type="text" name="PostMessage" value="" />
     <button type="submit" name="Submit">Submit</button>
 </form>
 
 <body>
-    There are @Model.NumberOfPosts posts.
+    @*There are @Model.NumberOfPosts posts.*@
 
     <ul>
         @foreach (WebApplication.Models.Post post in Model.Posts)

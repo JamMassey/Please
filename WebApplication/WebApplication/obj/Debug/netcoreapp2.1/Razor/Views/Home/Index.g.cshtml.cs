@@ -61,7 +61,7 @@ using WebApplication.Models;
             WriteLiteral("<h2>Index</h2>\r\n\r\n");
             EndContext();
             BeginContext(98, 47, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5f07284482bc420c8634b788ea3dd34b", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d5ec6073620c4b09b254eac109dc92cd", async() => {
                 BeginContext(123, 18, true);
                 WriteLiteral(" Register New User");
                 EndContext();
@@ -83,7 +83,7 @@ using WebApplication.Models;
             WriteLiteral("\r\n");
             EndContext();
             BeginContext(147, 32, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "15b61905b98b4d71a2b7b04e5bf23136", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "828841af40054ef7a43849b254826ce0", async() => {
                 BeginContext(169, 6, true);
                 WriteLiteral(" Login");
                 EndContext();
