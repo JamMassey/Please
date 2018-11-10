@@ -1,4 +1,28 @@
-﻿@{
+﻿@model WebApplication.Models.PostListViewModel
+
+@{
     ViewData["Title"] = "Home Page";
 }
 <h2>Home</h2>
+
+<form action="/Home/Post" method="post">
+    <input type="text" name="PostMessage" value="" />
+    <button type="submit" name="Submit">Submit</button>
+</form>
+
+<body>
+    There are @Model.NumberOfPosts posts.
+
+    <ul>
+        @foreach (WebApplication.Models.Post post in Model.Posts)
+        {
+            <li>@post.PostKey @post.UserName @post.PostMessage</li>
+        }
+
+    </ul>
+    <a asp-action="Index"> Go Home </a>
+    <a asp-action="Register"> Register New User</a>
+    <a asp-action="Login">Login</a>
+
+
+</body>

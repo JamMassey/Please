@@ -21,13 +21,6 @@ namespace WebApplication.Models
         [RegularExpression(@"^((?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])).+$")]  //Password Validation
         public string Password { get; set; }
 
-
-        public string FirstName { get; set; }
-
-
-        public string LastName { get; set; }
-
-       
     }
 
 }

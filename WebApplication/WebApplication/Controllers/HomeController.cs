@@ -12,8 +12,10 @@ namespace WebApplication.Controllers
 {
     public class HomeController : Controller
     {
+        private User loggedIn = null;
         private DataContext db;
         private UserListViewModel userListVM = null;
+        private PostListViewModel postListVM = null;
 
         public HomeController(DataContext _db )
         {
@@ -52,7 +54,11 @@ namespace WebApplication.Controllers
         [HttpGet]
         public IActionResult Home()
         {
-            return View("Home");
+            PostListViewModel _postListVM = new PostListViewModel();
+            _postListVM.Posts = db.Posts.ToList<Post>(); //Get post list from database
+            postListVM = _postListVM;
+
+            return View(postListVM);
         }
 
         [HttpPost]
@@ -64,7 +70,8 @@ namespace WebApplication.Controllers
                 {
                     if (Password == u.Password)
                     {
-                        return View("Home");
+                        loggedIn = u;
+                        return RedirectToAction("Home");
                     }
                 }               
             }

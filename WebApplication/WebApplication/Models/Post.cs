@@ -17,10 +17,7 @@ namespace WebApplication.Models
         [EmailAddress]
         public string UserName { get; set; }
 
-        public string FirstName { get; set; }
-
-        public string LastName { get; set; }
-
-       
+        [MaxLength(300)]
+        public string PostMessage { get; set; }
     }
 }
