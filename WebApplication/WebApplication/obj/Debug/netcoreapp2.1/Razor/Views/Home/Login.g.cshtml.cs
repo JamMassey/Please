@@ -63,7 +63,7 @@ using WebApplication.Models;
             WriteLiteral("<h2>Login</h2>\r\n");
             EndContext();
             BeginContext(92, 40, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b859884993774382ae7884af556e4521", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "72b9b7b59ea94148a9e73de55d91894c", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationSummaryTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.ValidationSummaryTagHelper>();
@@ -86,7 +86,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationSummaryTagHelper.ValidationSumma
             WriteLiteral("\r\n");
             EndContext();
             BeginContext(134, 211, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "49e73cb8deb44b7cb47527b244c616c4", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ab307c2835b64e578efe06f632eaf62e", async() => {
                 BeginContext(175, 163, true);
                 WriteLiteral("\r\n    <input type=\"text\" name=\"UserName\" value=\"\" />\r\n    <input type=\"text\" name=\"Password\" value=\"\" />\r\n    <button type=\"submit\" name=\"Submit\">Submit</button>\r\n");
                 EndContext();

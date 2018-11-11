@@ -18,9 +18,6 @@ namespace WebApplication.Controllers
         private DataContext db;
         private UserListViewModel userListVM = null;
         private PostListViewModel postListVM = null;
-        private readonly IHttpContextAccessor _httpContextAccessor;
-        private ISession _session => _httpContextAccessor.HttpContext.Session;
-
 
         public HomeController(DataContext _db )
         {
@@ -70,38 +67,47 @@ namespace WebApplication.Controllers
             return View(postListVM);        //Give post list to view
         }
 
+        [HttpGet]
+        public IActionResult Signout()
+        {
+            HttpContext.Session.Remove("CurrentUser");   //Clear session data
+            return View("Index");        //Give post list to view
+        }
+
+        
+        //Handles a submitted login attempt
         [HttpPost]
-        public IActionResult Login(string UserName, string Password)
+        public IActionResult Login(string userName, string password)
         {
             foreach (WebApplication.Models.User u in userListVM.Users)
             {
-                if (UserName == u.UserName)    //Checks if username entered matches a username in thedb.
+                if (userName == u.UserName)    //Checks if username entered matches a username in thedb.
                 {
-                    if (Password == u.Password)     //Then checks if correspondingpasswords match.
+                    if (password == u.Password)     //Then checks if correspondingpasswords match.
                     {                       
-                        HttpContext.Session.SetString("In", UserName); //Set username for this session.
+                        HttpContext.Session.SetString("CurrentUser", userName); //Set username for this session.
                         return RedirectToAction("Home");    //Open Home
                     }
                 }
             }
                 
-            return View("Login");   //Onfail return to login.
+            return View("Login");   //On fail return to login.
         }
 
+        //Handles post submissions.
         [HttpPost]
-        public IActionResult Home(string PostMessage)
+        public IActionResult Home(string postMessage)
         {
             Post post = new Post();            //Create a new post.
-            post.PostMessage = PostMessage;     //Given string from input box on Home View.           
-            post.UserName = HttpContext.Session.GetString("In");    //Assigns username from session data.
+            post.PostMessage = postMessage;     //Given string from input box on Home View.           
+            post.UserName = HttpContext.Session.GetString("CurrentUser");    //Assigns username from session data.
             db.Posts.Add(post);
             db.SaveChanges();   //Updates db.
-
+            postListVM.Posts = db.Posts.ToList<Post>(); //Update post list. Prevents delay.
             return View(postListVM);    //Returns the view with list.
         }
 
- 
-
+        //Handles a registration attempt.
         [HttpPost]
         public IActionResult Register(User user)
         {
